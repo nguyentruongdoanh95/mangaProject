@@ -15,8 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        configNavigation()
         return true
+    }
+    
+    func configNavigation() {
+        UINavigationBar.appearance().backgroundColor = rgbColor(red: 0, green: 176, blue: 200, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: rgbColor(red: 255, green: 155, blue: 96, alpha: 1)]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
